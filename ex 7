@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c;
+    float delta, x1, x2;
+    float xv, yv;
+
+    printf("Digite os coeficientes a, b e c da equação y = ax^2 + bx + c:\n");
+    scanf("%f %f %f", &a, &b, &c);
+
+    delta = b*b - 4*a*c;
+
+    if (delta >= 0) {
+        x1 = (-b + sqrt(delta)) / (2*a);
+        x2 = (-b - sqrt(delta)) / (2*a);
+        printf("Raízes da equação: x1 = %.2f, x2 = %.2f\n", x1, x2);
+    } else {
+        printf("A equação não possui raízes reais.\n");
+    }
+
+    xv = -b / (2*a);
+    yv = -delta / (4*a);
+    printf("Vértice da parábola: (%.2f, %.2f)\n", xv, yv);
+
+    if (a > 0) {
+        printf("A concavidade da parábola é para cima.\n");
+    } else {
+        printf("A concavidade da parábola é para baixo.\n");
+    }
+
+    return 0;
+}
