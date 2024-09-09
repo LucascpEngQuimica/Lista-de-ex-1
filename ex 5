@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int rg[8], P = 0, R, Q;
+    char digitoVerificador;
+
+    printf("Digite os 8 dígitos do RG (sem o dígito verificador): ");
+    for (int i = 0; i < 8; i++) {
+        scanf("%d", &rg[i]);
+    }
+
+    P = 2*rg[0] + 3*rg[1] + 4*rg[2] + 5*rg[3] + 6*rg[4] + 7*rg[5] + 8*rg[6] + 9*rg[7];
+
+    R = P % 11;
+    Q = 11 - R;
+
+    // Definindo o dígito verificador
+    if (Q == 10) {
+        digitoVerificador = 'X';
+    } else if (Q == 11) {
+        digitoVerificador = '0';
+    } else {
+        digitoVerificador = Q + '0'; 
+    }
+
+    printf("O dígito verificador do RG é: %c\n", digitoVerificador);
+
+    return 0;
+}
