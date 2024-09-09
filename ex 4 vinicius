@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int num1, num2, a, b, temp, mdc, mmc;
+
+    printf("Digite dois números inteiros positivos: ");
+    scanf("%d %d", &num1, &num2);
+
+   
+    a = num1;
+    b = num2;
+
+    while (b != 0) {
+        temp = b;
+        b = a % b;
+        a = temp;
+    }
+    mdc = a;
+
+    mmc = abs(num1 * num2) / mdc;
+
+    printf("MDC: %d\n", mdc);
+    printf("MMC: %d\n", mmc);
+
+    return 0;
+}
