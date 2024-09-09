@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int n,x;
+    printf("Digite um numero inteiro e positivo: ");
+    scanf("%i",&n);
+    x=2;
+    while(x<n){
+        if(n%x==0){
+            printf("%i nao e primo",n);
+            break;
+        }
+    x++;}
+    if(x==n){
+        printf("%i e primo",n);
+    }
+    return 0;
+    }
